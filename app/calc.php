@@ -1,15 +1,10 @@
 <?php
-// KONTROLER strony kalkulatora
 require_once dirname(__FILE__).'/../config.php';
-// W kontrolerze niczego nie wysyła się do klienta.
-// Wysłaniem odpowiedzi zajmie się odpowiedni widok.
-// Parametry do widoku przekazujemy przez zmienne.
-// 1. pobranie parametrów
-$x = $_REQUEST ['x']; //kwota
-$y = $_REQUEST ['y']; //miesiące
-$z = $_REQUEST ['z']; //oprocentowanie
-// 2. walidacja parametrów z przygotowaniem zmiennych dla widoku
-// sprawdzenie, czy parametry zostały przekazane
+
+$x = isset($_REQUEST['x']) ? $_REQUEST['x'] : '';
+$y = isset($_REQUEST['y']) ? $_REQUEST['y'] : '';
+$z = isset($_REQUEST['z']) ? $_REQUEST['z'] : '';
+
 if ( ! (isset($x) && isset($y) && isset($z))) {
 	//sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
 	$messages [] = 'Błędne wywołanie aplikacji. Brak jednego z parametrów.';

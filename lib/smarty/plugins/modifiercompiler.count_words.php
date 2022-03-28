@@ -5,13 +5,14 @@
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty count_words modifier plugin
- * Type:     modifier
- * Name:     count_words
+ * Type:     modifier<br>
+ * Name:     count_words<br>
  * Purpose:  count the number of words in a text
  *
- * @link   https://www.smarty.net/manual/en/language.modifier.count.words.php count_words (Smarty online manual)
+ * @link   http://www.smarty.net/manual/en/language.modifier.count.words.php count_words (Smarty online manual)
  * @author Uwe Tews
  *
  * @param array $params parameters

@@ -7,21 +7,18 @@
  */
 class SmartyCompilerException extends SmartyException
 {
-    /**
-     * @return string
-     */
     public function __toString()
     {
         return ' --> Smarty Compiler: ' . $this->message . ' <-- ';
     }
 
     /**
-     * @param int $line
+     * The line number of the template error
+     *
+     * @type int|null
      */
-    public function setLine($line)
-    {
-        $this->line = $line;
-    }
+    public $line = null;
+
     /**
      * The template source snippet relating to the error
      *

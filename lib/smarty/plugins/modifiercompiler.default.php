@@ -5,13 +5,14 @@
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty default modifier plugin
- * Type:     modifier
- * Name:     default
+ * Type:     modifier<br>
+ * Name:     default<br>
  * Purpose:  designate default value for empty variables
  *
- * @link   https://www.smarty.net/manual/en/language.modifier.default.php default (Smarty online manual)
+ * @link   http://www.smarty.net/manual/en/language.modifier.default.php default (Smarty online manual)
  * @author Uwe Tews
  *
  * @param array $params parameters
@@ -24,9 +25,11 @@ function smarty_modifiercompiler_default($params)
     if (!isset($params[ 1 ])) {
         $params[ 1 ] = "''";
     }
+
     array_shift($params);
     foreach ($params as $param) {
-        $output = '(($tmp = ' . $output . ' ?? null)===null||$tmp===\'\' ? ' . $param . ' ?? null : $tmp)';
+        $output = '(($tmp = @' . $output . ')===null||$tmp===\'\' ? ' . $param . ' : $tmp)';
     }
+
     return $output;
 }

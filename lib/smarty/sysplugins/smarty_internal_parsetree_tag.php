@@ -18,6 +18,7 @@
  */
 class Smarty_Internal_ParseTree_Tag extends Smarty_Internal_ParseTree
 {
+
     /**
      * Saved block nesting level
      *
@@ -61,7 +62,8 @@ class Smarty_Internal_ParseTree_Tag extends Smarty_Internal_ParseTree
         $var = $parser->compiler->getNewPrefixVariable();
         $tmp = $parser->compiler->appendCode('<?php ob_start();?>', $this->data);
         $tmp = $parser->compiler->appendCode($tmp, "<?php {$var}=ob_get_clean();?>");
-        $parser->compiler->prefix_code[] = sprintf('%s', $tmp);
+        $parser->compiler->prefix_code[] = sprintf("%s", $tmp);
+
         return $var;
     }
 }

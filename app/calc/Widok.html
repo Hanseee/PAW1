@@ -1,4 +1,4 @@
-{extends file="../templates/main.html"}
+{extends file=$conf->root_path|cat:"/templates/main.html"}
 {block name=footer}stopka example{/block}
 {block name=content}
 <h2 class="content-head is-center">Prosty kalkulator kreytowy</h2>
@@ -10,7 +10,7 @@
 </div>   
     
 <div class="l-box-lrg pure-u-1 pure-u-med-1-5">
-	<form class="pure-form pure-form-stacked" action="{$conf->app_url}/app/calc.php" method="post">
+	<form class="pure-form pure-form-stacked" action="{$conf->action_root}calcCompute" method="post">
             <fieldset>
             <label for="id_x">Kwota: </label>
             <input id="id_x" type="text" name="x" value="{$form->x}" /><br />

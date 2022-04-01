@@ -1,42 +1,41 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-03-28 19:55:46
-  from "C:\xampp\htdocs\phpzadanie1\app\Widok.html" */
+/* Smarty version 3.1.30, created on 2022-04-01 14:39:58
+  from "C:\xampp\htdocs\phpzadanie1\app\calc\Widok.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6241f6a265b685_13431286',
+  'unifunc' => 'content_6246f29ee20262_68028463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c503d0d0f9cb73491d503c3f8afd77c90dbcf7c4' => 
+    'ea62ad578bc6f95c6bb5fccff46e13a6e353f900' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\Widok.html',
-      1 => 1648490143,
+      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\calc\\Widok.html',
+      1 => 1648816477,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../templates/main.html' => 1,
   ),
 ),false)) {
-function content_6241f6a265b685_13431286 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6246f29ee20262_68028463 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8315576556241f6a2651376_60522668', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10221379566246f29ee14ee6_87537901', 'footer');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9582404416241f6a265b313_79810902', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12506612316246f29ee1fd63_22007412', 'content');
 $_smarty_tpl->inheritance->endChild();
-$_smarty_tpl->_subTemplateRender("file:../templates/main.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+$_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'footer'} */
-class Block_8315576556241f6a2651376_60522668 extends Smarty_Internal_Block
+class Block_10221379566246f29ee14ee6_87537901 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -45,7 +44,7 @@ stopka example<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_9582404416241f6a265b313_79810902 extends Smarty_Internal_Block
+class Block_12506612316246f29ee1fd63_22007412 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -59,8 +58,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </div>   
     
 <div class="l-box-lrg pure-u-1 pure-u-med-1-5">
-	<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/app/calc.php" method="post">
+	<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+calcCompute" method="post">
             <fieldset>
             <label for="id_x">Kwota: </label>
             <input id="id_x" type="text" name="x" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->x;?>
@@ -76,7 +75,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 	</form>
 </div>
 
-<div class="l-box-lrg pure-u-1 pure-u-med-2-5">
+<div class="l-box-lrg pure-u-1 pure-u-med-2-5"> 
 
 
 <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>

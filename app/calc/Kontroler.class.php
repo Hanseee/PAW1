@@ -1,8 +1,8 @@
 <?php
-require_once $conf->root_path.'/app/CalcForm.class.php';
-require_once $conf->root_path.'/app/CalcResult.class.php';
+require_once $conf->root_path.'/app/calc/CalcForm.class.php';
+require_once $conf->root_path.'/app/calc/CalcResult.class.php';
 require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
-require_once $conf->root_path.'/lib/alerty.php';    //powiadomienia
+require_once $conf->root_path.'/lib/alerty.php';
 
 class Kontroler {
     private $msgs;   //wiadomości dla widoku
@@ -24,18 +24,32 @@ class Kontroler {
         }
 
     
-        public function validate(){
-		if (! (isset ( $this->form->x ) && isset ( $this->form->y ) && isset ( $this->form->z ))) {return false;} 
-                else { 
-			$this->hide_intro = true;   //ta instrukcja sprawia że po ponownym załadowaniu formularza z danymi jesteśmy już na dole
+        public function validate() {
+		if (! (isset ( $this->form->x ) && isset ( $this->form->y ) && isset ( $this->form->z ))) {
+			return false;
+		} else { 
+			$this->hide_intro = true;
 		}
-		if ($this->form->x == "") {$this->msgs->addError('Brak kwoty');}
-		if ($this->form->y == "") {$this->msgs->addError('Brak czasu');}
-                if ($this->form->z == "") {$this->msgs->addError('Brak oprocentowania');}
+		if ($this->form->x == "") {
+			$this->msgs->addError('Nie podano liczby 1');
+		}
+		if ($this->form->y == "") {
+			$this->msgs->addError('Nie podano liczby 2');
+		}
+                if ($this->form->z == "") {
+			$this->msgs->addError('Nie podano liczby 3');
+		}
 		if (! $this->msgs->isError()) {
-			if (! is_numeric ( $this->form->x )) {$this->msgs->addError('Kwota nie spełnia wymagań');}
-			if (! is_numeric ( $this->form->y )) {$this->msgs->addError('Podana data nie spełnia wymagań');}
-                        if (! is_numeric ( $this->form->z )) {$this->msgs->addError('Oprocentowanie nie spełnia wymagań');}
+			if (! is_numeric ( $this->form->x )) {
+				$this->msgs->addError('Pierwsza wartość nie jest liczbą całkowitą');
+			}
+			
+			if (! is_numeric ( $this->form->y )) {
+				$this->msgs->addError('Druga wartość nie jest liczbą całkowitą');
+			}
+                        if (! is_numeric ( $this->form->z )) {
+				$this->msgs->addError('Druga wartość nie jest liczbą całkowitą');
+			}
 		}
 		return ! $this->msgs->isError();
 	}
@@ -55,16 +69,14 @@ class Kontroler {
     public function generateView(){
 		global $conf;
 		$smarty = new Smarty();
-		$smarty->assign('conf',$conf);  //bardzo sprytnie
-                
-		$smarty->assign('page_title','Przykład 05');
-		$smarty->assign('page_description','Obiektowość. Funkcjonalność aplikacji zamknięta w metodach różnych obiektów. Pełen model MVC.');
-		$smarty->assign('page_header','Obiekty w PHP');
+		$smarty->assign('conf',$conf);
+		$smarty->assign('page_title','phpzadanie1uno');
+		$smarty->assign('page_description','Aplikacja z jednym "punktem wejścia". Model MVC, w którym jeden główny kontroler używa różnych obiektów kontrolerów w zależności od wybranej akcji - przekazanej parametrem.');
+		$smarty->assign('page_header','Kontroler główny');		
 		$smarty->assign('hide_intro',$this->hide_intro);
 		$smarty->assign('msgs',$this->msgs);
 		$smarty->assign('form',$this->form);
 		$smarty->assign('res',$this->result);
-		
-		$smarty->display($conf->root_path.'/app/Widok.html');
+		$smarty->display($conf->root_path.'/app/calc/Widok.html');
 	}
 }

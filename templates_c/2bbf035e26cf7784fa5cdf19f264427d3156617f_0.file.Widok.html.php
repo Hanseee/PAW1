@@ -1,53 +1,56 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-01 14:44:45
-  from "C:\xampp\htdocs\phpzadanie1\app\calc\Widok.html" */
+/* Smarty version 3.1.30, created on 2022-04-01 18:58:53
+  from "C:\xampp\htdocs\phpzadanie1\app\views\Widok.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6246f3bd322e36_31965896',
+  'unifunc' => 'content_62472f4d12ea19_78844731',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ea62ad578bc6f95c6bb5fccff46e13a6e353f900' => 
+    '2bbf035e26cf7784fa5cdf19f264427d3156617f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\calc\\Widok.html',
-      1 => 1648816477,
+      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\Widok.html',
+      1 => 1648832324,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:main.html' => 1,
   ),
 ),false)) {
-function content_6246f3bd322e36_31965896 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62472f4d12ea19_78844731 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17981394316246f3bd318f27_00963704', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_86582815062472f4d124575_64986297', 'footer');
 ?>
 
+
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12570499866246f3bd322a43_66401006', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139182541662472f4d12e693_22427385', 'content');
 $_smarty_tpl->inheritance->endChild();
-$_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
+$_smarty_tpl->_subTemplateRender("file:main.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_17981394316246f3bd318f27_00963704 extends Smarty_Internal_Block
+class Block_86582815062472f4d124575_64986297 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-stopka example<?php
+przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora<?php
 }
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_12570499866246f3bd322a43_66401006 extends Smarty_Internal_Block
+class Block_139182541662472f4d12e693_22427385 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
+
 
 <h2 class="content-head is-center">Prosty kalkulator kreytowy</h2>
 

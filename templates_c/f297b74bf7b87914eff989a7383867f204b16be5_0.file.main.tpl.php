@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-03-28 19:35:55
-  from "C:\xampp\htdocs\phpzadanie1\templates\main.html" */
+/* Smarty version 3.1.30, created on 2022-04-04 10:23:26
+  from "C:\xampp\htdocs\phpzadanie1\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6241f1fb41ff45_70776833',
+  'unifunc' => 'content_624aaafe4a21a4_14897855',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '69bb23e9d688cffaa60b79f84e1107a9252ae843' => 
+    'f297b74bf7b87914eff989a7383867f204b16be5' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\templates\\main.html',
-      1 => 1648488911,
+      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\templates\\main.tpl',
+      1 => 1648817216,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6241f1fb41ff45_70776833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624aaafe4a21a4_14897855 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -31,7 +31,6 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? "Opis domyślny" : $tmp);?>
 ">
-
     <title><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_title']->value)===null||$tmp==='' ? "Tytuł domyślny" : $tmp);?>
 </title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
@@ -39,17 +38,14 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 /css/main-grid.css">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /css/layouts/marketing.css">
-
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /css/style.css">
 <?php if ($_smarty_tpl->tpl_vars['hide_intro']->value) {?>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /css/style_hide_intro.css">
 <?php }?>
-	
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-
-	<?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /js/jquery.min.js"><?php echo '</script'; ?>
 >
@@ -88,7 +84,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <div class="content-wrapper">
     <div id="app_content" class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1984283136241f1fb41f565_43811967', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1038238940624aaafe4a1674_74348862', 'content');
 ?>
 
     </div>
@@ -96,7 +92,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1984283136241f1fb4
     <div class="footer l-box is-center">
 		<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19843420786241f1fb41fbe0_10292460', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1821566445624aaafe4a1e60_20130352', 'footer');
 ?>
 
 		</p>
@@ -108,7 +104,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19843420786241f1fb
 </html>
 <?php }
 /* {block 'content'} */
-class Block_1984283136241f1fb41f565_43811967 extends Smarty_Internal_Block
+class Block_1038238940624aaafe4a1674_74348862 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -117,7 +113,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_19843420786241f1fb41fbe0_10292460 extends Smarty_Internal_Block
+class Block_1821566445624aaafe4a1e60_20130352 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

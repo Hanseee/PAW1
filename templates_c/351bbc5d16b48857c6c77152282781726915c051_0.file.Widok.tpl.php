@@ -1,43 +1,43 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-01 18:58:53
-  from "C:\xampp\htdocs\phpzadanie1\app\views\Widok.html" */
+/* Smarty version 3.1.30, created on 2022-04-04 10:26:37
+  from "C:\xampp\htdocs\phpzadanie1\app\views\Widok.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_62472f4d12ea19_78844731',
+  'unifunc' => 'content_624aabbd691817_30936107',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '2bbf035e26cf7784fa5cdf19f264427d3156617f' => 
+    '351bbc5d16b48857c6c77152282781726915c051' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\Widok.html',
-      1 => 1648832324,
+      0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\Widok.tpl',
+      1 => 1649060686,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:main.html' => 1,
+    'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_62472f4d12ea19_78844731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624aabbd691817_30936107 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_86582815062472f4d124575_64986297', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_225049863624aabbd686587_43180869', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139182541662472f4d12e693_22427385', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_811049944624aabbd691478_82865433', 'content');
 $_smarty_tpl->inheritance->endChild();
-$_smarty_tpl->_subTemplateRender("file:main.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+$_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_86582815062472f4d124575_64986297 extends Smarty_Internal_Block
+class Block_225049863624aabbd686587_43180869 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -46,7 +46,7 @@ przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_139182541662472f4d12e693_22427385 extends Smarty_Internal_Block
+class Block_811049944624aabbd691478_82865433 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -121,7 +121,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 <?php }?>
 
 <?php if (isset($_smarty_tpl->tpl_vars['res']->value->result)) {?>
-	<h4>Wynik</h4>
+	<h4>Miesięczna kwota do spłaty:</h4>
 	<p class="res">
 	<?php echo $_smarty_tpl->tpl_vars['res']->value->result;?>
 

@@ -1,4 +1,4 @@
-{extends file="main.html"}
+{extends file="main.tpl"}
 {block name=footer}przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora{/block}
 
 {block name=content}
@@ -52,7 +52,7 @@
 {/if}
 
 {if isset($res->result)}
-	<h4>Wynik</h4>
+	<h4>Miesięczna kwota do spłaty:</h4>
 	<p class="res">
 	{$res->result}
 	</p>

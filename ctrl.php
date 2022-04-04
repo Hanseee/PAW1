@@ -2,19 +2,21 @@
 require_once 'init.php';
 switch ($action) {
 	default :
-		include_once 'app/controllers/Kontroler.class.php';
-		$ctrl = new Kontroler ();
+            //teraz autoloader sam znajduje pliki, w starej formie wyrzuca błąd: Class "Kontroler" not found 
+		$ctrl = new app\controllers\Kontroler();
 		$ctrl->generateView ();
 	break;
+        
 	case 'calcCompute' :
-		include_once 'app/controllers/Kontroler.class.php';
-		$ctrl = new Kontroler ();
+		$ctrl = new app\controllers\Kontroler();
 		$ctrl->akcja ();
 	break;
+    
 	case 'action1' :
-		print('hello');
+		print('start');
 	break;
+    
 	case 'action2' :
-		print('goodbye');
+		print('koniec');
 	break;
 }

@@ -1,8 +1,9 @@
 <?php
-require_once 'CalcForm.class.php';
-require_once 'CalcResult.class.php';
+namespace app\controllers;
+// nie trzeba używać use kiedy kontroler używa klas niejawnie 
+use app\forms\CalcForm;
+use app\transfer\CalcResult;
 class Kontroler {
-
     // kontroler testowy na bazie tego znalezionego na stronie P P Kudłacika
 	private $form;
 	private $result; 
@@ -23,28 +24,31 @@ class Kontroler {
 		}
 
 		if ($this->form->x == "") {
-			getMessages()->addError('Nie podano liczby 1');
+			getMessages()->addError('Nie podałeś kwoty');
 		}
 		if ($this->form->y == "") {
-			getMessages()->addError('Nie podano liczby 2');
+			getMessages()->addError('Nie podałeś liczby miesięcy');
 		}
                 if ($this->form->z == "") {
-			getMessages()->addError('Nie podano liczby 3');
+			getMessages()->addError('Oprocentowania');
+		}
+                 if ($this->form->z < 1) {
+			getMessages()->addError('Oprocentowanie nie może być mniejsze od 1%');
+		}
+                 if ($this->form->z > 100) {
+			getMessages()->addError('Oprocentowanie nie może być większe od 100%');
 		}
 		if (! getMessages()->isError()) {
-			
 			if (! is_numeric ( $this->form->x )) {
-				getMessages()->addError('Pierwsza wartość nie jest liczbą całkowitą');
+				getMessages()->addError('Pierwsza wartość nawet nie jest liczbą całkowitą');
 			}
-			
 			if (! is_numeric ( $this->form->y )) {
-				getMessages()->addError('Druga wartość nie jest liczbą całkowitą');
+				getMessages()->addError('Druga wartość nawet nie jest liczbą całkowitą');
 			}
                         if (! is_numeric ( $this->form->z )) {
-				getMessages()->addError('Druga wartość nie jest liczbą całkowitą');
+				getMessages()->addError('Trzecia wartość nawet nie jest liczbą całkowitą');
 			}
 		}
-		
 		return ! getMessages()->isError();
 	}
     
@@ -55,7 +59,7 @@ class Kontroler {
                     $this->form->y = intval($this->form->y);
                     $this->form->z = intval($this->form->z);
                     $this->result->result = ($this->form->x/$this->form->y)*($this->form->z/100);
-                    getMessages()->addInfo('Wykonano obliczenia.');
+                    getMessages()->addInfo('akcja() działa - obliczenia zwróciły wynik do $result');
                 }
                 $this->generateView();
             }
@@ -64,11 +68,11 @@ class Kontroler {
 		//nie trzeba już tworzyć Smarty i przekazywać mu konfiguracji i messages
 		// - wszystko załatwia funkcja getSmarty()
 		
-		getSmarty()->assign('page_title','Przykład 06a');
-		getSmarty()->assign('page_description','Aplikacja z jednym "punktem wejścia". Zmiana w postaci nowej struktury foderów, skryptu inicjalizacji oraz pomocniczych funkcji.');
-		getSmarty()->assign('page_header','Kontroler główny');
+		getSmarty()->assign('page_title','phpproj1');
+		getSmarty()->assign('page_description','walka z kontrolerem trwa nadal');
+		getSmarty()->assign('page_header','Kontroler');
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->assign('res',$this->result);
-		getSmarty()->display('Widok.html'); // już nie podajemy pełnej ścieżki - foldery widoków są zdefiniowane przy ładowaniu Smarty
+		getSmarty()->display('Widok.tpl'); // już nie podajemy pełnej ścieżki - foldery widoków są zdefiniowane przy ładowaniu Smarty
 	}
 }

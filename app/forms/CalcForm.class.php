@@ -1,7 +1,7 @@
 <?php
 namespace app\forms;
 class CalcForm {
-    public $x;
-    public $y;
-    public $z;
+    public $kwota;
+    public $mc;
+    public $procent;
 } 

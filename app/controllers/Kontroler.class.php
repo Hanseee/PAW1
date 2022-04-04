@@ -13,39 +13,39 @@ class Kontroler {
 	}
         
 	public function getParams(){
-		$this->form->x = getFromRequest('x');
-		$this->form->y = getFromRequest('y');
-		$this->form->z = getFromRequest('z');
+		$this->form->kwota = getFromRequest('kwota');
+		$this->form->mc = getFromRequest('mc');
+		$this->form->procent = getFromRequest('procent');
 	}
 	
 	public function validate() {
-		if (! (isset ( $this->form->x ) && isset ( $this->form->y ) && isset ( $this->form->z ))) {
+		if (! (isset ( $this->form->kwota ) && isset ( $this->form->mc ) && isset ( $this->form->procent ))) {
 			return false;
 		}
 
-		if ($this->form->x == "") {
+		if ($this->form->kwota == "") {
 			getMessages()->addError('Nie podałeś kwoty');
 		}
-		if ($this->form->y == "") {
+		if ($this->form->mc == "") {
 			getMessages()->addError('Nie podałeś liczby miesięcy');
 		}
-                if ($this->form->z == "") {
+                if ($this->form->procent == "") {
 			getMessages()->addError('Oprocentowania');
 		}
-                 if ($this->form->z < 1) {
+                 if ($this->form->procent < 1) {
 			getMessages()->addError('Oprocentowanie nie może być mniejsze od 1%');
 		}
-                 if ($this->form->z > 100) {
+                 if ($this->form->procent > 100) {
 			getMessages()->addError('Oprocentowanie nie może być większe od 100%');
 		}
 		if (! getMessages()->isError()) {
-			if (! is_numeric ( $this->form->x )) {
+			if (! is_numeric ( $this->form->kwota )) {
 				getMessages()->addError('Pierwsza wartość nawet nie jest liczbą całkowitą');
 			}
-			if (! is_numeric ( $this->form->y )) {
+			if (! is_numeric ( $this->form->mc )) {
 				getMessages()->addError('Druga wartość nawet nie jest liczbą całkowitą');
 			}
-                        if (! is_numeric ( $this->form->z )) {
+                        if (! is_numeric ( $this->form->procent )) {
 				getMessages()->addError('Trzecia wartość nawet nie jest liczbą całkowitą');
 			}
 		}
@@ -55,10 +55,10 @@ class Kontroler {
         public function akcja(){
                 $this->getparams();
                 if ($this->validate()) {
-                    $this->form->x = intval($this->form->x);
-                    $this->form->y = intval($this->form->y);
-                    $this->form->z = intval($this->form->z);
-                    $this->result->result = ($this->form->x/$this->form->y)*($this->form->z/100);
+                    $this->form->kwota = intval($this->form->kwota);
+                    $this->form->mc = intval($this->form->mc);
+                    $this->form->procent = intval($this->form->procent);
+                    $this->result->result = ($this->form->kwota/$this->form->mc)*($this->form->procent/100);
                     getMessages()->addInfo('akcja() działa - obliczenia zwróciły wynik do $result');
                 }
                 $this->generateView();

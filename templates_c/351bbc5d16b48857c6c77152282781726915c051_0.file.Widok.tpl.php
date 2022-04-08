@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-04 20:49:04
+/* Smarty version 3.1.30, created on 2022-04-08 16:01:22
   from "C:\xampp\htdocs\phpzadanie1\app\views\Widok.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_624b3da0ac06c6_02121797',
+  'unifunc' => 'content_625040323b5055_15675357',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '351bbc5d16b48857c6c77152282781726915c051' => 
     array (
       0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\Widok.tpl',
-      1 => 1649098119,
+      1 => 1649426058,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_624b3da0ac06c6_02121797 (Smarty_Internal_Template $_smarty_tpl) {
+function content_625040323b5055_15675357 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_279058452624b3da0ab0e04_40139845', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_258630879625040323a7f94_43685811', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1682658801624b3da0ac0150_95655059', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2122941753625040323b4b71_74182032', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_279058452624b3da0ab0e04_40139845 extends Smarty_Internal_Block
+class Block_258630879625040323a7f94_43685811 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -46,12 +46,18 @@ footer tekst akcja<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1682658801624b3da0ac0150_95655059 extends Smarty_Internal_Block
+class Block_2122941753625040323b4b71_74182032 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-
+<div class="pure-menu pure-menu-horizontal bottom-margin">
+	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout"  class="pure-menu-heading pure-menu-link">wyloguj</a>
+	<span style="float:right;">użytkownik: <?php echo $_smarty_tpl->tpl_vars['user']->value->login;?>
+, rola: <?php echo $_smarty_tpl->tpl_vars['user']->value->role;?>
+</span>
+</div>
 <h2 class="content-head is-center">Prosty kalkulator kreytowy</h2>
 
 <div class="pure-g">

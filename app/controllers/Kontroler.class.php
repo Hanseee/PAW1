@@ -51,7 +51,51 @@ class Kontroler {
 		}
 		return ! getMessages()->isError();
 	}
-    
+        
+        public function action_calcCompute(){
+		$this->getParams();
+		if ($this->validate()) {
+			$this->form->x = intval($this->form->x);
+			$this->form->y = intval($this->form->y);
+			getMessages()->addInfo('Parametry poprawne.');
+			switch ($this->form->op) {
+				case 'minus' :
+					if (inRole('admin')) {
+						$this->result->result = $this->form->x - $this->form->y;
+						$this->result->op_name = '-';
+					} else {
+						getMessages()->addError('Tylko administrator może wykonać tę operację');
+					}
+					break;
+				case 'times' :
+					$this->result->result = $this->form->x * $this->form->y;
+					$this->result->op_name = '*';
+					break;
+				case 'div' :
+					if (inRole('admin')) {
+						$this->result->result = $this->form->x / $this->form->y;
+						$this->result->op_name = '/';
+					} else {
+						getMessages()->addError('Tylko administrator może wykonać tę operację');
+					}
+					break;
+				default :
+					$this->result->result = $this->form->x + $this->form->y;
+					$this->result->op_name = '+';
+					break;
+			}
+			
+			getMessages()->addInfo('Wykonano obliczenia.');
+		}
+		
+		$this->generateView();
+	}
+	
+	public function action_calcShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
+		$this->generateView();
+	}
+        
         public function akcja(){
                 $this->getparams();
                 if ($this->validate()) {

@@ -1,22 +1,9 @@
 <?php
 require_once 'init.php';
-switch ($action) {
-	default :
-            //teraz autoloader sam znajduje pliki, w starej formie wyrzuca błąd: Class "Kontroler" not found 
-		$ctrl = new app\controllers\Kontroler();
-		$ctrl->generateView ();
-	break;
-        
-	case 'calcCompute' :
-		$ctrl = new app\controllers\Kontroler();
-		$ctrl->akcja ();
-	break;
-    
-	case 'action1' :
-		print('start');
-	break;
-    
-	case 'action2' :
-		print('koniec');
-	break;
-}
+getRouter()->setDefaultRoute('calcShow');
+getRouter()->setLoginRoute('login');
+getRouter()->addRoute('calcShow',    'Kontroler',  ['user','admin']);
+getRouter()->addRoute('calcCompute', 'Kontroler',  ['user','admin']);
+getRouter()->addRoute('login',       'LoginCtrl');
+getRouter()->addRoute('logout',      'LoginCtrl', ['user','admin']);
+getRouter()->go();

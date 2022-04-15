@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-08 16:01:22
+/* Smarty version 3.1.30, created on 2022-04-15 11:43:26
   from "C:\xampp\htdocs\phpzadanie1\app\views\Widok.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_625040323b5055_15675357',
+  'unifunc' => 'content_62593e3e8b0573_40716549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '351bbc5d16b48857c6c77152282781726915c051' => 
     array (
       0 => 'C:\\xampp\\htdocs\\phpzadanie1\\app\\views\\Widok.tpl',
-      1 => 1649426058,
+      1 => 1650015794,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_625040323b5055_15675357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62593e3e8b0573_40716549 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_258630879625040323a7f94_43685811', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177887642862593e3e8a1079_51152719', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2122941753625040323b4b71_74182032', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_115520900762593e3e8aff60_80430953', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_258630879625040323a7f94_43685811 extends Smarty_Internal_Block
+class Block_177887642862593e3e8a1079_51152719 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -46,7 +46,7 @@ footer tekst akcja<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_2122941753625040323b4b71_74182032 extends Smarty_Internal_Block
+class Block_115520900762593e3e8aff60_80430953 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -68,7 +68,7 @@ logout"  class="pure-menu-heading pure-menu-link">wyloguj</a>
     
 <div class="l-box-lrg pure-u-1 pure-u-med-1-5">
 	<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-calcCompute" method="post">
+akcja" method="post">
             <fieldset>
             <label for="id_kwota">Kwota: </label>
             <input id="id_kwota" type="text" name="kwota" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>

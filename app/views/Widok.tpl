@@ -15,7 +15,7 @@
 </div>   
     
 <div class="l-box-lrg pure-u-1 pure-u-med-1-5">
-	<form class="pure-form pure-form-stacked" action="{$conf->action_root}calcCompute" method="post">
+	<form class="pure-form pure-form-stacked" action="{$conf->action_root}akcja" method="post">
             <fieldset>
             <label for="id_kwota">Kwota: </label>
             <input id="id_kwota" type="text" name="kwota" value="{$form->kwota}" /><br />

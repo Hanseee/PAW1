@@ -52,51 +52,7 @@ class Kontroler {
 		return ! getMessages()->isError();
 	}
         
-        public function action_calcCompute(){
-		$this->getParams();
-		if ($this->validate()) {
-			$this->form->x = intval($this->form->x);
-			$this->form->y = intval($this->form->y);
-			getMessages()->addInfo('Parametry poprawne.');
-			switch ($this->form->op) {
-				case 'minus' :
-					if (inRole('admin')) {
-						$this->result->result = $this->form->x - $this->form->y;
-						$this->result->op_name = '-';
-					} else {
-						getMessages()->addError('Tylko administrator może wykonać tę operację');
-					}
-					break;
-				case 'times' :
-					$this->result->result = $this->form->x * $this->form->y;
-					$this->result->op_name = '*';
-					break;
-				case 'div' :
-					if (inRole('admin')) {
-						$this->result->result = $this->form->x / $this->form->y;
-						$this->result->op_name = '/';
-					} else {
-						getMessages()->addError('Tylko administrator może wykonać tę operację');
-					}
-					break;
-				default :
-					$this->result->result = $this->form->x + $this->form->y;
-					$this->result->op_name = '+';
-					break;
-			}
-			
-			getMessages()->addInfo('Wykonano obliczenia.');
-		}
-		
-		$this->generateView();
-	}
-	
-	public function action_calcShow(){
-		getMessages()->addInfo('Witaj w kalkulatorze');
-		$this->generateView();
-	}
-        
-        public function akcja(){
+        public function action_akcja(){
                 $this->getparams();
                 if ($this->validate()) {
                     $this->form->kwota = intval($this->form->kwota);
@@ -105,8 +61,41 @@ class Kontroler {
                     $this->result->result = ($this->form->kwota/$this->form->mc)*($this->form->procent/100);
                     getMessages()->addInfo('akcja() działa - obliczenia zwróciły wynik do $result');
                 }
-                $this->generateView();
-            }
+                    try {    
+                    $database = new \Medoo\Medoo([
+                    'type' => 'mysql',
+                    'host' => 'localhost',
+                    'database' => 'simpledb',
+                    'username' => 'root',
+                    'password' => '',
+                    'charset' => 'utf8',
+                    'collation' => 'utf8_polish_ci',
+                    'port' => 3306,
+                    'prefix' => 'PREFIX_',
+                    'logging' => true,
+                    'error' => PDO::ERRMODE_SILENT,
+                    'option' => [
+                            \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+                            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+                    ],
+                            'command' => [
+                                    'SET SQL_MODE=ANSI_QUOTES'
+                            ]
+                    ]);
+                    $database->insert("wynik", [
+                        "kwota" => $this->form->kwotac,
+                        "mc" => $this->form->mc,
+                        "procent"  => $this->form->procent,
+                        "result"  => $this->result->result
+                    ]); 
+                    }catch (\PDOException $ex) {getMessages()->addError("DB Error: ".$ex->getMessage());}
+		$this->generateView();
+	}
+	
+	public function action_calcShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
+		$this->generateView();
+	}
     
     public function generateView(){
 		//nie trzeba już tworzyć Smarty i przekazywać mu konfiguracji i messages
